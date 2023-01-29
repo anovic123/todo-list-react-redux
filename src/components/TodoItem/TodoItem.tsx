@@ -20,15 +20,19 @@ export const TodoItem = () => {
 
   return (
     <div className="todo">
-      {todoList.map((todo: Todo) => (
-        <div key={todo.id} className={styles.todoItem}>
-          <div className={styles.todoItemBody}>
-            <div className={styles.todoItemTitle}>{todo.title}</div>
-            <div className={styles.todoItemDescription}>{todo.description}</div>
+      {todoList.length < 1 ? (
+        <h2 className={styles.todoEmpty}>TodoList is Empty</h2>
+      ) : (
+        todoList.map((todo: Todo) => (
+          <div key={todo.id} className={styles.todoItem}>
+            <div className={styles.todoItemDescription}>
+              <div className={styles.todoItemTitle}>{todo.title}</div>
+              <div className={styles.todoItemDescription}>{todo.description}</div>
+            </div>
+            <Button onClick={() => onClickRemoveTodo(todo.id)}>Delete</Button>
           </div>
-          <Button onClick={() => onClickRemoveTodo(todo.id)}>Delete</Button>
-        </div>
-      ))}
+        ))
+      )}
     </div>
   );
 };

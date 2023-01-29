@@ -22,7 +22,7 @@ body {
     rgb(69, 226, 116) 100%
   );
   width: 100%;
-  height: calc(100vh - 10vh);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@ body {
 .App {
   background: #fff;
   min-width: 400px;
-  max-height: 700px;
+  max-height: 600px;
   border-radius: 20px;
   padding: 30px;
   overflow-y: auto;
