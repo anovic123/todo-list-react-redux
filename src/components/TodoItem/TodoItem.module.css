@@ -16,6 +16,14 @@
   cursor: pointer;
 }
 
+.todoItemChecked {
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: line-through;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .todoEmpty {
   font-size: 25px;
   font-weight: 600;

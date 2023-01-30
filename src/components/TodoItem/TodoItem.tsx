@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../redux/store';
-import { removeTodo } from '../../redux/slices/todoSlice';
+import { removeTodo, checkTodo } from '../../redux/slices/todoSlice';
 import { Todo } from '../../redux/slices/types';
 import { Button } from '../Button/Button';
 
@@ -24,9 +24,15 @@ export const TodoItem = () => {
         <h2 className={styles.todoEmpty}>TodoList is Empty</h2>
       ) : (
         todoList.map((todo: Todo) => (
-          <div key={todo.id} className={styles.todoItem}>
+          <div className={styles.todoItem} style={{ opacity: todo.checked ? 0.8 : 1 }}>
             <div className={styles.todoItemDescription}>
-              <div className={styles.todoItemTitle}>{todo.title}</div>
+              <div
+                className={styles.todoItemTitle}
+                onClick={() => dispatch(checkTodo(todo.id))}
+                style={{ textDecoration: todo.checked ? 'line-through' : 'none' }}
+              >
+                {todo.title}
+              </div>
               <div className={styles.todoItemDescription}>{todo.description}</div>
             </div>
             <Button onClick={() => onClickRemoveTodo(todo.id)}>Delete</Button>
