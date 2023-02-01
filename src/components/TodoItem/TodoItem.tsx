@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Button } from '../';
 import { useAppDispatch } from '../../redux/store';
+import { RootState } from '../../redux/store';
 import { removeTodo, checkTodo } from '../../redux/slices/todoSlice';
 import { Todo } from '../../redux/slices/types';
-import { Button } from '../Button/Button';
-
-import { RootState } from '../../redux/store';
 
 import styles from './TodoItem.module.css';
 
